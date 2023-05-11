@@ -13,7 +13,7 @@ html,body
   background-size: 100%;
   width: 100%;
   height: 100%;
-  position: absolute;
+  position: relative;
   z-index: 0;
   animation-name: BodyAnimation;
   animation-duration: 100s;
@@ -42,7 +42,35 @@ html,body
   background-color: rgba(138, 0, 143, 0.13);
   position: absolute;
   width: 50%;
+  height: 50%;
   height: fit-content;
   color: black;
   border: 5px solid pink;
+}
+.image
+{
+  margin-left: calc((100% - 50%) / 2);
+  width: 50%;
+  border-radius: 20px;
+  aspect-ratio: 1;
+  border: 5px solid crimson;
+  background-color: rgba(165, 42, 42, 0.336);
+  cursor: pointer;
+  background-image: url(https://res.cloudinary.com/hcti/image/fetch/c_limit,f_auto,q_auto:good,w_400/https://docs.htmlcsstoimage.com/assets/images/cat.png);
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+.bar
+{
+  border: 5px solid black;
+  width: 90%;
+  margin-left: 5%;
+  height: 15px;
+  border-radius: 10px;
+
+}
+.Text
+{
+  font-size: large;
 }
