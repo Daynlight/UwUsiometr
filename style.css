@@ -60,6 +60,13 @@ html,body
   background-position: center;
   background-size: 100%;
   background-repeat: no-repeat;
+  transition: 1s;
+}
+.image:hover
+{
+  margin-left: calc((100% - 60%) / 2);
+  transition: 1s;
+  width: 60%;
 }
 .bar
 {
