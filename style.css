@@ -82,7 +82,7 @@ html,body
 .bar::before
 {
   content: "";
-  width: 10%;
+  width: var(--Wynik);
   height: 100%;
   left: 0%;
   background-color: red;
