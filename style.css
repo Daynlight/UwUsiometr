@@ -64,9 +64,9 @@ html,body
 }
 .image:hover
 {
-  margin-left: calc((100% - 60%) / 2);
+  
   transition: 1s;
-  width: 60%;
+  transform: scale(1.05);
 }
 .bar
 {
@@ -75,9 +75,36 @@ html,body
   margin-left: 5%;
   height: 15px;
   border-radius: 10px;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.363);
 
+}
+.bar::before
+{
+  content: "";
+  width: 10%;
+  height: 100%;
+  left: 0%;
+  background-color: red;
+  position: absolute;
 }
 .Text
 {
   font-size: large;
+}
+.Przelicz
+{
+  margin: 10px calc((100% - 300px) / 2);
+  border: 5px solid black;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.548);
+  border-radius: 20px;
+  height: fit-content;
+  width: 300px;
+  transition: 1s;
+}
+.Przelicz:hover
+{
+  transition: 1s;
+  transform: scale(1.1);
 }
