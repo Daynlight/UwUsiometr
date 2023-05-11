@@ -22,6 +22,7 @@ function WynikAnimation()
     if(Count>Wynik) Count -= AnimatioSpeed;
     bar.style.setProperty("--Wynik",`${Count}%`);
   }
+
   
   
 }
