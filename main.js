@@ -1,13 +1,5 @@
-//import DataJson from "/Data/Data.json";
-var DataJson = {
-    "iamges":
-    [
-        {
-            "data": "",
-            "Ocena": 0
-        }
-    ]
-}
+import DataJson from "/Data/Data.json";
+
 
 var JsonArray = DataJson["iamges"];
 var Count = 0;
