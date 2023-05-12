@@ -1,9 +1,9 @@
+
 html,body
 {
   width: 100%;
   height: 100%;
   overflow: hidden;
-
 }
 .BackGround
 {
@@ -42,7 +42,6 @@ html,body
   background-color: rgba(138, 0, 143, 0.13);
   position: absolute;
   width: 50%;
-  height: 50%;
   height: fit-content;
   color: black;
   border: 5px solid pink;
@@ -103,17 +102,24 @@ html,body
 }
 .Przelicz
 {
-  margin: 10px calc((100% - 300px) / 2);
+  margin: 10px;
   border: 5px solid black;
   color: white;
   background-color: rgba(0, 0, 0, 0.548);
   border-radius: 20px;
   height: fit-content;
-  width: 300px;
   transition: 1s;
+  width: calc(100% - 30px);
 }
 .Przelicz:hover
 {
   transition: 1s;
   transform: scale(1.1);
+}
+@media only screen and (max-width: 700px) {
+  .Content
+  {
+    left: 0;
+    width: calc(100% - 10px);
+  }
 }
