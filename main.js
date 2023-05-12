@@ -1,8 +1,12 @@
+import DataJson from "/Data/Data.json";
+
+var JsonArray = DataJson["iamges"];
 var Count = 0;
 var Wynik = 0;
 var AnimatioSpeed = 0.1;
-var NoweZdjęcie = true;
-
+var NoweZdjęcie = false;
+var Data = "";
+var Wygeneruj = false;
 
 function PrzeliczWynikTestu()
 {
@@ -10,11 +14,30 @@ function PrzeliczWynikTestu()
   document.querySelector(".Przelicz").addEventListener("click",()=>
   {
     if(NoweZdjęcie)
-    Wynik = Math.floor(Math.random() * 100);
-    NoweZdjęcie = false;
+    {
+      Wygeneruj = true;
+      for(var i=0;i<JsonArray.length;i++)
+      {
+        if(JsonArray[i].data==Data)
+        {
+          Wynik = JsonArray[i].Ocena;
+          Wygeneruj = false;
+          console.log("asd");
+        }
+      }
+      if(Wygeneruj) WygenereujWynik();
+      NoweZdjęcie = false;
+    }
   })
 
 }
+function WygenereujWynik()
+{
+  var WynikLocal = Math.floor(Math.random() * 100);
+  Wynik = WynikLocal;
+  JsonArray.push({"data": Data,"Ocena":WynikLocal});
+}
+
 function WynikAnimation()
 {
   var bar = document.getElementById("bar");
@@ -38,9 +61,8 @@ function ZdjęciePoPrzeciągnięciu()
       const reader = new FileReader();
       reader.onload = (e) =>
       {
-        const Data = e.target.result;
+        Data = e.target.result;
         document.getElementById("image").style.backgroundImage = `url(${Data})`;
-        console.log(Data);
       }
       reader.readAsDataURL(FileData);
     }
