@@ -7,6 +7,7 @@ var AnimatioSpeed = 0.1;
 var NoweZdjęcie = false;
 var Data = "";
 var Wygeneruj = false;
+var FirstRun = true;
 
 function PrzeliczWynikTestu()
 {
@@ -25,7 +26,9 @@ function PrzeliczWynikTestu()
       }
       if(Wygeneruj) WygenereujWynik();
       NoweZdjęcie = false;
+      FirstRun=false;
     }
+    
   })
 }
 
@@ -45,6 +48,17 @@ function WynikAnimation()
     if(Count<Wynik) Count += AnimatioSpeed;
     if(Count>Wynik) Count -= AnimatioSpeed;
     bar.style.setProperty("--Wynik",`${Count}%`);
+    
+  }
+  else if(!FirstRun)
+  {
+    var Text = document.getElementById("Text");
+    var PrefixText = "";
+    PrefixText += `Wynik to ${Wynik}% `;
+    if(Wynik < 20) Text.innerHTML = PrefixText+"ewidentnie masz za mało UwUśność";
+    else if(Wynik < 40)  Text.innerHTML = PrefixText+"nawet UwUśnie";
+    else if(Wynik < 60)  Text.innerHTML = PrefixText+"Bardzo UwUśne zdjęcie";
+    else if(Wynik > 60)  Text.innerHTML = PrefixText+"Ale UWUŚNIE!!!!";
   }
 }
 
@@ -70,5 +84,5 @@ function ZdjęciePoPrzeciągnięciu()
 }
 
 PrzeliczWynikTestu(); 
-ZdjęciePoPrzeciągnięciu()
-setInterval(WynikAnimation,1)
+ZdjęciePoPrzeciągnięciu();
+setInterval(WynikAnimation,1);
