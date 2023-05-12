@@ -29,10 +29,22 @@ function WynikAnimation()
 function ZdjęciePoPrzeciągnięciu()
 {
   
-  File = document.getElementById("file")
-  File.addEventListener("change",()=>
+  File = document.getElementById("file");
+  File.addEventListener("change",(e)=>
   {
-    // document.getElementById("image").style.backgroundImage = `url(${File.data})`
+    const FileData = e.target.files[0];
+    if(FileData)
+    {
+      const reader = new FileReader();
+      reader.onload = (e) =>
+      {
+        const Data = e.target.result;
+        document.getElementById("image").style.backgroundImage = `url(${Data})`;
+        console.log(Data);
+      }
+      reader.readAsDataURL(FileData);
+    }
+
     NoweZdjęcie = true;
   })
 }
