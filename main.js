@@ -10,7 +10,6 @@ var Wygeneruj = false;
 
 function PrzeliczWynikTestu()
 {
-  
   document.querySelector(".Przelicz").addEventListener("click",()=>
   {
     if(NoweZdjęcie)
@@ -22,15 +21,14 @@ function PrzeliczWynikTestu()
         {
           Wynik = JsonArray[i].Ocena;
           Wygeneruj = false;
-          console.log("asd");
         }
       }
       if(Wygeneruj) WygenereujWynik();
       NoweZdjęcie = false;
     }
   })
-
 }
+
 function WygenereujWynik()
 {
   var WynikLocal = Math.floor(Math.random() * 100);
@@ -49,9 +47,9 @@ function WynikAnimation()
     bar.style.setProperty("--Wynik",`${Count}%`);
   }
 }
+
 function ZdjęciePoPrzeciągnięciu()
 {
-  
   File = document.getElementById("file");
   File.addEventListener("change",(e)=>
   {
@@ -70,7 +68,6 @@ function ZdjęciePoPrzeciągnięciu()
     NoweZdjęcie = true;
   })
 }
-
 
 PrzeliczWynikTestu(); 
 ZdjęciePoPrzeciągnięciu()
