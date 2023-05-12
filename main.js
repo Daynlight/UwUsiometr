@@ -1,4 +1,4 @@
-import DataJson from "/Data/Data.json";
+//import DataJson from "/Data/Data.json";
 var DataJson = {
     "iamges":
     [
