@@ -1,4 +1,13 @@
-import DataJson from "/Data/Data.json";
+var DataJson = {
+  "iamges":
+  [
+      {
+          "data": "",
+          "Ocena": 0
+      }
+  ]
+};
+
 
 
 var JsonArray = DataJson["iamges"];
