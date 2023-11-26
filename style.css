@@ -111,6 +111,7 @@ html,body
   height: fit-content;
   transition: 1s;
   width: calc(100% - 30px);
+  cursor: pointer;
 }
 .Przelicz:hover
 {
